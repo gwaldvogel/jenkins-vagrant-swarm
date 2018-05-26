@@ -24,6 +24,9 @@ fi
 # wait to let the swarm plugin delete the just killed swarm nodes
 sleep 10
 CLIENT=/vagrant/deploy/swarm-client.jar
-FSROOT="-fsroot $HOME/jenkins"
+FSROOT="-fsroot /jenkins"
+
+sudo mkdir -p /jenkins
+sudo chown -R vagrant:vagrant /jenkins
 
 java -jar $CLIENT -name $NAME -disableClientsUniqueId -executors 1 -username ci-slave -password 'jenkins1337' -master "http://jenkins.local:8080" $FSROOT $LABELS
