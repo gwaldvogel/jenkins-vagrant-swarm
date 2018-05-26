@@ -3,12 +3,12 @@ Vagrant.configure(2) do |config|
     config.vm.define "slave-" + i.to_s.rjust(3, "0") do |node|
       node.vm.box = "generic/ubuntu1604"
       node.vm.provider :virtualbox do |vb, override|
-        vb.memory = 128
+        vb.memory = 256
         vb.cpus = 1
         config.vbguest.auto_update = false
       end
       node.vm.provider :libvirt do |libvirt, override|
-        libvirt.memory = 128
+        libvirt.memory = 256
         libvirt.cpus = 1
         libvirt.uri = 'qemu+unix:///system'
         libvirt.driver = 'kvm'
