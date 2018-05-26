@@ -1,5 +1,4 @@
 Vagrant.configure(2) do |config|
-  config.vbguest.auto_update = false
   (1..100).each do |i|
     config.vm.define "slave-" + i.to_s.rjust(3, "0") do |node|
       node.vm.box = "generic/ubuntu1604"
