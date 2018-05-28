@@ -29,4 +29,4 @@ FSROOT="-fsroot /jenkins"
 sudo mkdir -p /jenkins
 sudo chown -R vagrant:vagrant /jenkins
 
-java -jar $CLIENT -name $NAME -disableClientsUniqueId -executors 1 -username ci-slave -password 'ci2013' -master "http://10.10.10.2:8080" $FSROOT $LABELS
+java -jar $CLIENT -name $NAME -disableClientsUniqueId -executors 1 -username ci-slave -password 'ci2013' -master "http://10.10.11.37:8080" $FSROOT $LABELS
